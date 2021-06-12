@@ -14,7 +14,8 @@ function createWindow (withDefault = 1200, heightDefault = 800, iconDefault = pa
         title: titleDefault,
         webPreferences: {
             ...webPreferences
-        }
+        },
+        preload: path.join(__dirname, "preload.js")
     });
     
     win.loadFile('./views/home/home.html');

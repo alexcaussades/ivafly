@@ -1,14 +1,24 @@
+const sqlite3 = require('sqlite3').verbose();
+const db = new sqlite3.Database('ivafly.db');
 /**
- * test de départ dans les fichiers
+ * 
+ * @param {lang} value 
+ * @returns lang
  */
 
-window.addEventListener('DOMContentLoaded', () => {
-    const replaceText = (selector, text) => {
-      const element = document.getElementById(selector)
-      if (element) element.innerText = text
-    }
-  
-    for (const type of ['chrome', 'node', 'electron']) {
-      replaceText(`${type}-version`, process.versions[type])
-    }
-  })
+function lang(value = "fr"){
+
+  if(value === "fr"){
+    const fr = require("./logs-data/lang/app-dic-fr.json")
+    return fr
+  }else{
+    const en = require("./logs-data/lang/app-dic-en.json")
+    return en
+  }
+
+}
+
+
+module.exports = {
+  lang
+}

@@ -4,9 +4,10 @@ const webPreferences = require('../../webPreferences')
 const {data: ivaoData} = require("../../ivao/api-ivao.json")
 const $ = require('jquery')
 const fetch = require('node-fetch');
-const version = require('../../logs-data/version.json')
-
-
+const version = require('../../logs-data/version.json');
+const { lang } = require('../../preload');
+const sqlite3 = require('sqlite3').verbose();
+const db = new sqlite3.Database('ivafly.db');
 
 
 

@@ -8,14 +8,17 @@
   },
   "author": "Alexandre Caussades <alexcaussades@gmail.com>",
   "bugs": {
-    "url": "https://github.com/alexcaussades/ivafly/issues"},
+    "url": "https://github.com/alexcaussades/ivafly/issues"
+  },
   "repository": "https://github.com/alexcaussades/ivafly",
   "license": "MIT",
   "dependencies": {
     "@popperjs/core": "^2.9.2",
+    "axios": "^0.21.1",
     "bootstrap": "^5.0.1",
     "electron": "^13.1.1",
     "jquery": "^3.6.0",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "sqlite3": "^5.0.2"
   }
 }
