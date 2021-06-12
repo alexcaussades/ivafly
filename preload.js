@@ -1,3 +1,7 @@
+/**
+ * test de départ dans les fichiers
+ */
+
 window.addEventListener('DOMContentLoaded', () => {
     const replaceText = (selector, text) => {
       const element = document.getElementById(selector)
