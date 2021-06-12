@@ -6,11 +6,12 @@ const path = require("path")
 
 let win
 
-function createWindow () {
-    win = new BrowserWindow({
-        width: 1200,
-        height: 800,
-        icon: path.join('images/IVAO_Logo.png'),
+function createWindow (withDefault = 1200, heightDefault = 800, iconDefault = path.join('images/IVAO_Logo.png'), titleDefault = "IvaFly") {
+    win = new BrowserWindow( {
+        width: withDefault,
+        height: heightDefault,
+        icon: iconDefault,
+        title: titleDefault,
         webPreferences: {
             ...webPreferences
         }
