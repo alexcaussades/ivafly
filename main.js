@@ -15,9 +15,15 @@ function createWindow (withDefault = 1200, heightDefault = 800, iconDefault = pa
         webPreferences: {
             ...webPreferences
         },
-        preload: path.join(__dirname, "preload.js")
     });
+
+    /**
+     * ouverture des codes sources en version devs
+     */
+   
+     
     
+
     win.loadFile('./views/home/home.html');
 
     // Handle window closed

@@ -166,7 +166,8 @@
       "source": "source",
       "test": "test",
       "port": "port",
-      "password": "password"
+      "password": "password",
+      "submit": "submit"
     },
     "obs": {
       "scene-list": "OBS | Scene list",

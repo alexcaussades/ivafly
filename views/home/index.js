@@ -5,17 +5,27 @@ const {data: ivaoData} = require("../../ivao/api-ivao.json")
 const $ = require('jquery')
 const fetch = require('node-fetch');
 const version = require('../../logs-data/version.json');
-const { lang } = require('../../preload');
-const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('ivafly.db');
 
+
+function lang(value = "fr"){
+
+  if(value === "fr"){
+    const fr = require("../../logs-data/lang/app-dic-fr.json")
+    return fr
+  }else{
+    const en = require("../../logs-data/lang/app-dic-en.json")
+    return en
+  }
+
+}
 
 
 $('#result').hide()
 
 $('#version').html('Version: ' + version.data.version)
 
-
+$('#rrr').html(lang("fr").words.submit)
+$('#welcome').html(lang('fr').sentences['welcome-message'])
 
 $('#platforme').on('click', () => {
   const metar = ivaoData.metar
