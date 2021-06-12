@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Comptabilité Garage</title>
+    <title>IVA-Fly</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,16 +23,21 @@
 <!-- Page Content -->
 <div class="container">
 
-    <h1>Hello World!</h1>
-    <p>
-        We are using Node.js <span id="node-version"></span>,
-        Chromium <span id="chrome-version"></span>,
-        and Electron <span id="electron-version"></span>.
-    </p>
-
+    <h1>Hello</h1>
+    
+    <form action="#" method="get" class="row g-3">
+        <div class="col-auto"><label class="form-label">ICAO: </label></div>
+        <div class="col-auto">
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="LFBL">
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3" id="platforme" >search</button>
+        </div>
+    </form>
 <div class="container">
-    <button type="submit" class="btn btn-info" id="platforme" >bouton de test</button>
+    
 </div>
+
 
 <div class="container" id="result">
     <div class="card">
@@ -42,6 +47,8 @@
         </div>
       </div>
 </div>
+
+<button id="test">Plateforme</button>
 
 <!-- Bootstrap core JavaScript -->
 <script src="index.js"></script>
