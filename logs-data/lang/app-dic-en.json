@@ -1,6 +1,6 @@
 {
     "sentences": {
-      "welcome-message": "Welcome home",
+      "welcome-message": "Welcome",
       "waiting-for-connexion": "Waiting for connexion",
       "ask-for-client-reload": "Would you like to reload the application now to apply changes?",
       "open-in-window": "Open in window",
