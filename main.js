@@ -4,6 +4,8 @@ const {data: ivaoData} = require("./ivao/api-ivao.json")
 const webPreferences = require('./webPreferences')
 const path = require("path")
 
+
+
 let win
 
 function createWindow (withDefault = 1200, heightDefault = 800, iconDefault = path.join('images/IVAO_Logo.png'), titleDefault = "IvaFly") {
@@ -41,9 +43,7 @@ app.on('window-all-closed', function () {
   })
 
 
-app.whenReady().then(() => {
-    createWindow()
-  })
+app.whenReady().then(createWindow)
 
 
 
