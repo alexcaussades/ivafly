@@ -21,6 +21,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^5.0.1",
     "electron-squirrel-startup": "^1.0.0",
+    "file-system": "^2.2.2",
     "jquery": "^3.6.0",
     "node-fetch": "^2.6.1"
   },

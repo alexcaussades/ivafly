@@ -1,0 +1,12 @@
+{
+    "users":{
+        "username": "",
+        "password": "",
+        "vid": "",
+        "email": ""
+    },
+    "preferencie": {
+        "lang": "fr",
+        "interface": "white"
+    }
+}
