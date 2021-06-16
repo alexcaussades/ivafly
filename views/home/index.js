@@ -59,7 +59,8 @@ $('#welcome').html(lang(preferencie.lang).sentences['welcome-message'])
 $('#platforme').on('click', () => {
     const platform = ivaoData.dataairport
     $('#result').show();
-    axios.get(platform + 'EGSS')
+    const icao = "lfbl"
+    axios.get(platform + icao)
     .then(function (response) {
       const {data} = response
       $('#nameAiport').html(data["nameAirport"])
@@ -70,7 +71,7 @@ $('#platforme').on('click', () => {
       $('#resultsarrival').html(data["resultsarrival"])
       $('#totalAtc').html(data["totalATC"])
       $('#totalfly').html(data["totalfly"])
-      axios.get("https://alexcaussades.com/api-ivao/atc.php?icao=EGSS")
+      axios.get(ivaoData.dataatc+ icao)
       .then(function (response2){
         const {data} = response2
         if (data["data"]["app"]["Callsign"] != null){
