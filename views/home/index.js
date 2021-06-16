@@ -58,10 +58,13 @@ $('#result').hide()
 $('#rrr').html(lang(preferencie["lang"]).words["submit"])
 $('#welcome').html(lang(preferencie.lang).sentences['welcome-message'])
 
-$('#platforme').on('click', () => {
+
+$("#platforme").on('click', () => {
+  
     const platform = ivaoData.dataairport
     $('#result').show();
-    const icao = "LFBL"
+    const icao = document.getElementById("icao").value
+    console.log(icao)
     const vacchart = vac(icao)
     axios.get(platform + icao)
     .then(function (response) {
@@ -78,6 +81,7 @@ $('#platforme').on('click', () => {
       $("#chartvac").on("click", () =>{
         openurl(vacchart)
       })
+      
       axios.get(ivaoData.dataatc+ icao)
       .then(function (response2){
         const {data} = response2
