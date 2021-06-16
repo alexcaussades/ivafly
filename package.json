@@ -20,6 +20,7 @@
     "@popperjs/core": "^2.9.2",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.1",
+    "electron-json-storage": "^4.5.0",
     "electron-squirrel-startup": "^1.0.0",
     "file-system": "^2.2.2",
     "jquery": "^3.6.0",

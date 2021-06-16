@@ -583,6 +583,13 @@
   "resolved" "https://registry.npmjs.org/async-exit-hook/-/async-exit-hook-2.0.1.tgz"
   "version" "2.0.1"
 
+"async@^2.0.0":
+  "integrity" "sha512-zflvls11DCy+dQWzTW2dzuilv8Z5X/pjfmZOWba6TNIVDm+2UDaJmXSOXlasHKfNBs8oo3M0aT50fDEWfKZjXg=="
+  "resolved" "https://registry.npmjs.org/async/-/async-2.6.3.tgz"
+  "version" "2.6.3"
+  dependencies:
+    "lodash" "^4.17.14"
+
 "async@0.9.x":
   "integrity" "sha1-rqdNXmHB+JlhO/ZL2mbUx48v0X0="
   "resolved" "https://registry.npmjs.org/async/-/async-0.9.2.tgz"
@@ -1295,6 +1302,18 @@
     "update-notifier" "^5.1.0"
     "yargs" "^17.0.1"
 
+"electron-json-storage@^4.5.0":
+  "integrity" "sha512-ML6Um4tZbJv938EbxvMJwzLA+v/wfWwEP+AXNum1zQF9RUFJ/SrRtIjGm9eFTFxURxn81r3ggdovuQikyF/m0Q=="
+  "resolved" "https://registry.npmjs.org/electron-json-storage/-/electron-json-storage-4.5.0.tgz"
+  "version" "4.5.0"
+  dependencies:
+    "async" "^2.0.0"
+    "lockfile" "^1.0.4"
+    "lodash" "^4.0.1"
+    "mkdirp" "^0.5.1"
+    "rimraf" "^2.5.1"
+    "write-file-atomic" "^2.4.2"
+
 "electron-notarize@^1.0.0":
   "integrity" "sha512-dsib1IAquMn0onCrNMJ6gtEIZn/azG8hZMCYOuZIMVMUeRMgBYHK1s5TK9P8xAcrAjh/2aN5WYHzgVSWX314og=="
   "resolved" "https://registry.npmjs.org/electron-notarize/-/electron-notarize-1.0.0.tgz"
@@ -1896,7 +1915,7 @@
     "to-readable-stream" "^1.0.0"
     "url-parse-lax" "^3.0.0"
 
-"graceful-fs@^4.1.2", "graceful-fs@^4.1.6", "graceful-fs@^4.2.0", "graceful-fs@^4.2.3":
+"graceful-fs@^4.1.11", "graceful-fs@^4.1.2", "graceful-fs@^4.1.6", "graceful-fs@^4.2.0", "graceful-fs@^4.2.3":
   "integrity" "sha512-nTnJ528pbqxYanhpDYsi4Rd8MAeaBA67+RZ10CM1m3bTAVFEDcd5AuA4a6W5YkGZ1iNXHzZz8T6TBKLeBuNriQ=="
   "resolved" "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.6.tgz"
   "version" "4.2.6"
@@ -2389,6 +2408,13 @@
   dependencies:
     "p-locate" "^5.0.0"
 
+"lockfile@^1.0.4":
+  "integrity" "sha512-cvbTwETRfsFh4nHsL1eGWapU1XFi5Ot9E85sWAwia7Y7EgB7vfqcZhTKZ+l7hCGxSPoushMv5GKhT5PdLv03WA=="
+  "resolved" "https://registry.npmjs.org/lockfile/-/lockfile-1.0.4.tgz"
+  "version" "1.0.4"
+  dependencies:
+    "signal-exit" "^3.0.2"
+
 "lodash._reinterpolate@^3.0.0":
   "integrity" "sha1-DM8tiRZq8Ds2Y8eWU4t1rG4RTZ0="
   "resolved" "https://registry.npmjs.org/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz"
@@ -2414,7 +2440,7 @@
   dependencies:
     "lodash._reinterpolate" "^3.0.0"
 
-"lodash@^4.17.10", "lodash@^4.17.15", "lodash@^4.17.20", "lodash@^4.17.21":
+"lodash@^4.0.1", "lodash@^4.17.10", "lodash@^4.17.14", "lodash@^4.17.15", "lodash@^4.17.20", "lodash@^4.17.21":
   "integrity" "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
   "resolved" "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
   "version" "4.17.21"
@@ -3354,7 +3380,7 @@
     "onetime" "^5.1.0"
     "signal-exit" "^3.0.2"
 
-"rimraf@^2.6.1", "rimraf@^2.6.3", "rimraf@^2.7.1":
+"rimraf@^2.5.1", "rimraf@^2.6.1", "rimraf@^2.6.3", "rimraf@^2.7.1":
   "integrity" "sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w=="
   "resolved" "https://registry.npmjs.org/rimraf/-/rimraf-2.7.1.tgz"
   "version" "2.7.1"
@@ -4081,6 +4107,15 @@
   "integrity" "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="
   "resolved" "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz"
   "version" "1.0.2"
+
+"write-file-atomic@^2.4.2":
+  "integrity" "sha512-GaETH5wwsX+GcnzhPgKcKjJ6M2Cq3/iZp1WyY/X1CSqrW+jVNM9Y7D8EC2sM4ZG/V8wZlSniJnCKWPmBYAucRQ=="
+  "resolved" "https://registry.npmjs.org/write-file-atomic/-/write-file-atomic-2.4.3.tgz"
+  "version" "2.4.3"
+  dependencies:
+    "graceful-fs" "^4.1.11"
+    "imurmurhash" "^0.1.4"
+    "signal-exit" "^3.0.2"
 
 "write-file-atomic@^3.0.0":
   "integrity" "sha512-AvHcyZ5JnSfq3ioSyjrBkH9yW4m7Ayk8/9My/DD9onKeu/94fwrMocemO2QAJFAlnnDN+ZDS+ZjAR5ua1/PV/Q=="

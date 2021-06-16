@@ -10,6 +10,11 @@ const {lang} = require('../../logs-data/lang/langage')
 const axios = require("axios")
 const urlApi = 'https://alexcaussades.com/api-ivao/'
 const { Notification } = require('electron')
+const {vac} = require("../../ivao/vac/vac")
+
+function openurl(value){
+  return shell.openExternal(value)
+}
 
 /**
  *  News Version 
@@ -17,9 +22,6 @@ const { Notification } = require('electron')
 axios.get(urlApi)
   .then(function (response) {
     const version_dist = response.data.version_app;
-    function openurl(value){
-      return shell.openExternal(value)
-    }
     if (versionapp() != version_dist){
     $('#version').show()
     $('#version').html(lang(preferencie['lang']).sentences["new-version-available"] + " <a href='' class='alert-link' id='new-download'>"+ lang(preferencie['lang']).sentences["click-to-link"]+"</a>")
@@ -59,7 +61,8 @@ $('#welcome').html(lang(preferencie.lang).sentences['welcome-message'])
 $('#platforme').on('click', () => {
     const platform = ivaoData.dataairport
     $('#result').show();
-    const icao = "lfbl"
+    const icao = "LFBL"
+    const vacchart = vac(icao)
     axios.get(platform + icao)
     .then(function (response) {
       const {data} = response
@@ -71,6 +74,10 @@ $('#platforme').on('click', () => {
       $('#resultsarrival').html(data["resultsarrival"])
       $('#totalAtc').html(data["totalATC"])
       $('#totalfly').html(data["totalfly"])
+      $('#chart').html("<a href='' id='chartvac'><span class='material-icons'>area_chart</span></a>")
+      $("#chartvac").on("click", () =>{
+        openurl(vacchart)
+      })
       axios.get(ivaoData.dataatc+ icao)
       .then(function (response2){
         const {data} = response2
