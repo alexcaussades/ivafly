@@ -10,9 +10,10 @@ function openurl(value){
 async function atc(icao){
     const platform = ivaoData.dataairport
     $('#result').show();
-    const vacchart = vac(icao)
+
     axios.get(platform + icao)
     .then(function (response) {
+      const vacchart = vac(icao)
       const {data} = response
       $('#nameAiport').html(data["nameAirport"])
       $('#icao').html("("+data["icao"]+")")
