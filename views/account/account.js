@@ -26,11 +26,8 @@ $('#result').hide()
 $('#welcome').html(lang(preferencie.lang).sentences['welcome-message'])
 //$("#welcome").html(store.get('unicorn'))
 
-
-
 $("#platforme").on('click', () => {
-    icao = document.getElementById("icao").value
+    const icao = document.getElementById("icao").value
     const {atc} = require("../../function/atc")
-    atc(icao)
-    
+    atc(icao)  
 });

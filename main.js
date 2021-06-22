@@ -1,6 +1,5 @@
 
 const { app, BrowserWindow, ipcMain } = require('electron');
-const {data: ivaoData} = require("./ivao/api-ivao.json")
 const webPreferences = require('./webPreferences')
 const path = require("path")
 

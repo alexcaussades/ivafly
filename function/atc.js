@@ -7,7 +7,7 @@ function openurl(value){
     return shell.openExternal(value)
   }
 
-async function atc(icao){
+function atc(icao){
     const platform = ivaoData.dataairport
     $('#result').show();
 
