@@ -71,7 +71,12 @@
       "add-event": "Add event",
       "confirm-quit": "Do you really want to leave ?",
       "obs-settings": "OBS settings",
-      "chart-vac": "Chart vac"
+      "chart-vac": "Chart vac",
+      "Email-Adress": "Email address",
+      "Name-Account": "Your Name",
+      "Vid-Account": "Your VID",
+      "Langage": "Choice of language"
+
     },
     "words": {
       "settings": "settings",

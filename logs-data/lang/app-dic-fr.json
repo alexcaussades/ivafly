@@ -71,7 +71,11 @@
     "add-event": "Ajouter un évènement",
     "confirm-quit": "Voulez vous vraiment quitter ?",
     "obs-settings": "OBS configuration",
-    "chart-vac": "Carte vac"
+    "chart-vac": "Carte vac",
+    "Email-Adress": "Adresse E-mail",
+    "Name-Account": "Votre Prémon",
+    "Vid-Account": "Votre VID",
+    "Langage": "Choix de la langue"
   },
   "words": {
     "settings": "options",

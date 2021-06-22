@@ -8,13 +8,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>IVA-Fly</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
     rel="stylesheet">
+    <link href="./../style.css" rel="stylesheet" type="text/css">
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';"/>
 </head>
 
@@ -24,89 +24,35 @@
 
 
 <div class="container">
-
-   
-    <h1 id="welcome"></h1>
-    
     <br>
-        <div class="alert alert-warning" role="alert" id="version">
-            <p id="new-download"></p>
-        </div>
-    <br>
-
-
     <form action="#" method="dialog">
-        <div class="col-auto"><label class="form-label">ICAO: </label></div>
-        <div class="col-auto">
-            <input type="text" name="icao" class="form-control" id="icao" placeholder="LFBL"> 
-            <input type="submit" id="platforme" class="btn btn-primary mt-2" ></button>
+        <div class="form-floating mb-3">
+          <input type="email" id="emailinput" class="form-control" id="floatingInput" aria-describedby="emailHelp">
+          <label for="floatingInput" id="email">Email address</label>
         </div>
-    </form>   
-        <br>
-           
 
-    
-<div class="container">
-    
-</div>
-
-
-<div class="container" id="result">
-    <div class="fs-3 fw-bold"><span id="nameAiport"></span> <span id="icao"></span></div>
-
-    <span class="" >Metar:</span>
-    <div class="card">
-        <div class="card-body" id="weather"></div>
-    </div>
-      <span class="" >Taf:</span>
-    <div class="card">
-        <div class="card-body" id="weather2"></div>
-    </div>
-
-    <br>
-    
-    <div class="text-wrap">
-        <button type="button" class="btn btn-dark btn-sm"><span class="material-icons">headset_mic</span>
-        <span class="badge bg-secondary" id="totalAtc"></span></button>
-        <button type="button" class="btn btn-dark btn-sm"><span class="material-icons">flight</span>
-        <span class="badge bg-secondary" id="totalfly"></span></button>
-        <button type="button" class="btn btn-dark btn-sm" ><span id="chart"></span></button>
-    </div>
-    
-    <br>
-
-    <div id="app">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title" id="AppCallsign"></h5>
-                <p class="card-text" id="AppAtis"></p>
-            </div>
+        <div class="form-floating mb-3">
+          <input type="text" name="name" id="nameinput" class="form-control" id="floatingInput">
+          <label for="floatingInput" id="name">name</label>
         </div>
-    </div>
-    <div id="twr">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title" id="twrCallsign"></h5>
-                <p class="card-text" id="twrAtis"></p>
-            </div>
-        </div>
-    </div>
-    <div id="gnd">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title" id="gndCallsign"></h5>
-                <p class="card-text" id="gndAtis"></p>
-            </div>
-        </div>
-    </div>
-    <div id="del">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title" id="delCallsign"></h5>
-                <p class="card-text" id="delAtis"></p>
-            </div>
-        </div>
-    </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" name="vid" id="vidinput" class="form-control" id="floatingInput">
+            <label for="floatingInput" id="vid">vid</label>
+          </div>
+        
+          <div class="form-floating mb-3">
+            <select class="form-select" id="langageinput">
+                <option value="fr">French</option>
+                <option value="en">English</option>
+            </select>
+            <label for="floatingInput" id="langage">langage</label>
+          </div>
+          
+
+        <button type="submit" id="newaccountsubmit" class="btn btn-primary">Submit</button>
+      </form>
+   
 </div>
 
 <!-- Bootstrap core JavaScript -->

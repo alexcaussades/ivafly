@@ -1,33 +1,22 @@
-const {shell} = require('electron');
+const {ipcRenderer} = require('electron');
 const $ = require('jquery')
 const {preferencie} = require('../../logs-data/users/users.json')
 const {lang} = require('../../logs-data/lang/langage')
-const { Notification } = require('electron')
 const {update} = require("../../function/update")
-
-
-//store.set('unicorn', '🦄');
-
-
-/**
- *  News Version 
- */
+const axios = require("axios")
 
 update()
 
-/**
- * Navbar
- */
+$("#email").html(lang(preferencie.lang).sentences["Email-Adress"])
+$("#name").html(lang(preferencie.lang).sentences["Name-Account"])
+$("#vid").html(lang(preferencie.lang).sentences["Vid-Account"])
+$("#langage").html(lang(preferencie.lang).sentences["Langage"])
 
-$('#navbar').load("../assets/navbar.html")
+$("#newaccountsubmit").on('click', () => {
+    const emailinput = document.getElementById("emailinput").value
+    const nameinput = document.getElementById("nameinput").value
+    const vidinput = document.getElementById("vidinput").value
+    const langageinput = document.getElementById("langageinput").value
 
-$('#result').hide()
-
-$('#welcome').html(lang(preferencie.lang).sentences['welcome-message'])
-//$("#welcome").html(store.get('unicorn'))
-
-$("#platforme").on('click', () => {
-    const icao = document.getElementById("icao").value
-    const {atc} = require("../../function/atc")
-    atc(icao)  
+    console.log(emailinput, nameinput, vidinput, langageinput)
 });

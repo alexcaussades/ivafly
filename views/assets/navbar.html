@@ -9,7 +9,7 @@
               <a class="nav-link" href="#">Features</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="welcome" href='./../account/account.html'>Account</a>
+              <a class="nav-link" id="welcome" href='#'>Account</a>
             </li>
           
           <li class="nav-item dropdown">
@@ -27,6 +27,10 @@
 </nav>
 
 <script>
+  require('electron');
    $('#welcome').html(lang(preferencie.lang).sentences['welcome-message'])
+   $("#welcome").on('click', () =>{
+    ipcRenderer.send("welcome")
+})
    require("bootstrap")
 </script>
