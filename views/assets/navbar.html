@@ -28,7 +28,7 @@
 
 <script>
   require('electron');
-   $('#welcome').html(lang(preferencie.lang).sentences['welcome-message'])
+   $('#welcome').html(lang(preferencie.lang).sentences['account'])
    $("#welcome").on('click', () =>{
     ipcRenderer.send("welcome")
 })
