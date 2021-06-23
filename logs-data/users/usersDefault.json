@@ -1,7 +1,8 @@
 {
     "users":{
+        "userid": "",
         "username": "",
-        "password": "",
+        "token": "",
         "vid": "",
         "email": ""
     },

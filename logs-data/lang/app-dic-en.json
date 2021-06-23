@@ -75,7 +75,10 @@
       "Email-Adress": "Email address",
       "Name-Account": "Your Name",
       "Vid-Account": "Your VID",
-      "Langage": "Choice of language"
+      "Langage": "Choice of language",
+      "account": "Account",
+      "Sign-in": "Sign in",
+      "Sign-up": "Sign up"
 
     },
     "words": {

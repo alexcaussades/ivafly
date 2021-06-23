@@ -75,7 +75,10 @@
     "Email-Adress": "Adresse E-mail",
     "Name-Account": "Votre Prémon",
     "Vid-Account": "Votre VID",
-    "Langage": "Choix de la langue"
+    "Langage": "Choix de la langue",
+    "account": "mon Compte",
+    "Sign-in": "Connectez-vous",
+    "Sign-up": "S'inscrire"
   },
   "words": {
     "settings": "options",

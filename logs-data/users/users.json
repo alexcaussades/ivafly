@@ -1,12 +1,14 @@
 {
-    "users":{
-        "username": "",
-        "token": "",
-        "vid": "",
-        "email": ""
-    },
-    "preferencie": {
-        "lang": "fr",
-        "interface": "white"
-    }
+  "users": {
+    "userid": "",
+    "username": "",
+    "token": "",
+    "vid": "",
+    "email": "",
+    "account": null
+  },
+  "preferencie": {
+    "lang": "fr",
+    "interface": "white"
+  }
 }

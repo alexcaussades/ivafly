@@ -5,7 +5,6 @@ const {lang} = require('../../logs-data/lang/langage')
 const { Notification } = require('electron')
 const {update} = require("../../function/update")
 
-
 //store.set('unicorn', '🦄');
 
 
@@ -13,17 +12,20 @@ const {update} = require("../../function/update")
  *  News Version 
  */
 
-update()
+
+
+
+update();
 
 /**
  * Navbar
  */
 
-$('#navbar').load("../assets/navbar.html")
+$('#navbar').load("../assets/navbar.html");
 
-$('#result').hide()
+$('#result').hide();
 
-$('#welcome').html(lang(preferencie.lang).sentences['welcome-message'])
+$('#welcome').html(lang(preferencie.lang).sentences['welcome-message']);
 
 
 
