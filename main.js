@@ -3,8 +3,24 @@ const { app, BrowserWindow, ipcMain } = require('electron');
 const webPreferences = require('./webPreferences')
 const path = require("path");
 const {users} = require("./logs-data/users/users.json")
+const os = require('os');
+const local = os.homedir()+"/AppData/Local"
+const fs = require('fs');
 
 
+/**
+ * @constructor bdd 
+ */
+
+
+fs.mkdir(path.join(local, "ivafly"), (err =>{
+    if(err){ return console.log(err)} console.log('Directory created successfully!');
+}))
+
+
+/**
+ * @table create
+ */
 
 let win = null
 let Mainwindows = null

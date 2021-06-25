@@ -1,6 +1,9 @@
 const {ipcRenderer} = require('electron');
 const $ = require('jquery')
 const {preferencie} = require('../../logs-data/users/usersDefault.json')
+const os = require('os');
+const path = require("path");
+const local = os.homedir()+"/AppData/Local/ivafly"
 const {lang} = require('../../logs-data/lang/langage')
 const axios = require("axios")
 const fs = require("fs")
@@ -45,7 +48,7 @@ $("#newaccountsubmit").on('click', () => {
             }
         }
        let newUsersProfil = JSON.stringify(profil, null, 2)
-       fs.writeFile(__dirname + "./../../logs-data/users/users.json", newUsersProfil, function(error){
+       fs.writeFile(path.join(local, newUsersProfil), function(error){
             
        })
     })
