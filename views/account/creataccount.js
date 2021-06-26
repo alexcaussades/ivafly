@@ -1,7 +1,7 @@
 const {ipcRenderer} = require('electron');
 const $ = require('jquery')
-const {preferencie} = require('../../logs-data/users/usersDefault.json')
 const os = require('os');
+const {preferencie} = require(os.homedir()+"/AppData/Local/ivafly/users.json")
 const path = require("path");
 const local = os.homedir()+"/AppData/Local/ivafly"
 const {lang} = require('../../logs-data/lang/langage')
@@ -12,15 +12,15 @@ const fs = require("fs")
 /**
  * creation du compte utilisateur du logiciel
  * @description Change les information du langague / Enrgistre le E-mail - Name - VID
- * @callback token : ID
  * @author Alexandre Caussades 
  */
   
-
+console.log(preferencie)
 $("#email").html(lang(preferencie.lang).sentences["Email-Adress"])
 $("#name").html(lang(preferencie.lang).sentences["Name-Account"])
 $("#vid").html(lang(preferencie.lang).sentences["Vid-Account"])
 $("#langage").html(lang(preferencie.lang).sentences["Langage"])
+$("#newaccountsubmit").html(lang(preferencie.lang).words["submit"])
 
 $("#newaccountsubmit").on('click', () => {
     const emailinput = document.getElementById("emailinput").value
@@ -47,8 +47,8 @@ $("#newaccountsubmit").on('click', () => {
                 interface: "white"
             }
         }
-       let newUsersProfil = JSON.stringify(profil, null, 2)
-       fs.writeFile(path.join(local, newUsersProfil), function(error){
+       let newUsersProfil = JSON.stringify(profil)
+       fs.writeFile(path.join(local + '/users.json', newUsersProfil), function(error){
             
        })
     })

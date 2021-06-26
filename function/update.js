@@ -1,7 +1,9 @@
 const axios = require("axios")
 const urlApi = 'https://alexcaussades.com/api-ivao/'
 const {versionapp, urlrelease} = require('../logs-data/version/version');
-const {preferencie} = require('../logs-data/users/users.json')
+const os = require('os');
+const {preferencie} = require(os.homedir()+"/AppData/Local/ivafly/users.json")
+const {users} = require(os.homedir()+"/AppData/Local/ivafly/users.json")
 const {lang} = require('../logs-data/lang/langage')
 const { Notification } = require('electron')
 

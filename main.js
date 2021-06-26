@@ -2,29 +2,39 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const webPreferences = require('./webPreferences')
 const path = require("path");
-const {users} = require("./logs-data/users/users.json")
 const os = require('os');
-const local = os.homedir()+"/AppData/Local"
-const fs = require('fs');
+const local = os.homedir()+"/AppData/Local/ivafly"
+const fs = require("fs")
+
+let profil = {
+    users:{
+        account: null
+    },
+    preferencie: {
+        lang: "en",
+        interface: "white"
+    }}
+let newUsersProfil = JSON.stringify(profil, null, 2)
+
+if (!fs.existsSync(local)) {
+    fs.mkdirSync(local)
+    fs.mkdirSync(local + "/friend")
+    fs.mkdirSync(local + "/sav")
+    fs.mkdirSync(local + "/data-atc")
+    fs.mkdirSync(local + "/data-pilot")
+  }
+
+fs.open(local + '/users.json', function (err) { 
+    if(err){
+        fs.writeFile(local + '/users.json', newUsersProfil , function (err) {})
+    }
+});
 
 
-/**
- * @constructor bdd 
- */
-
-
-fs.mkdir(path.join(local, "ivafly"), (err =>{
-    if(err){ return console.log(err)} console.log('Directory created successfully!');
-}))
-
-
-/**
- * @table create
- */
 
 let win = null
 let Mainwindows = null
-console.log(users["userid"])
+
 
 function createWindow (loadFileTemplate, withDefault = 1200, heightDefault = 800, iconDefault = path.join('images/IVAO_Logo.png'), titleDefault = "IvaFly") {
     win = new BrowserWindow( {
@@ -68,8 +78,9 @@ app.whenReady().then(() =>{
 
 
 ipcMain.on("welcome",(EventTarget, arg) =>{
-
-    if (users.account === null){
+    const users = local+ "/users.json"
+    
+    if (users["account"] == null){
         Mainwindows = createWindow("./views/account/creataccount.html", 600, 480, null, 'Add account')
     }else{
         Mainwindows = createWindow("./views/account/account.html", 600, 480, null, 'my account') 

@@ -7,6 +7,10 @@ const {lang} = require('../../logs-data/lang/langage')
 const { Notification } = require('electron')
 const {update} = require("../../function/update")
 
+
+
+
+
 /**
  *  News Version 
  */
