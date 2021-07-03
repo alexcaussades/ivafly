@@ -1,5 +1,4 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
-const webPreferences = require('./webPreferences')
 const path = require('path')
 const os = require('os')
 const local = os.homedir() + '/AppData/Local/ivafly'
@@ -50,7 +49,9 @@ function createWindow(
         icon: iconDefault,
         title: titleDefault,
         webPreferences: {
-            ...webPreferences,
+            nodeIntegration: true,
+            contextIsolation: false, //lancement dans les autres fenetre
+            plugins: true,
         },
     })
 
@@ -74,6 +75,7 @@ app.on('window-all-closed', function () {
 })
 
 app.whenReady().then(() => {
+    app.allowRendererProcessReuse = true
     Mainwindows = createWindow('./views/home/home.html')
 })
 

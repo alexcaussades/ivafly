@@ -6,11 +6,15 @@ const { users } = require(os.homedir() + '/AppData/Local/ivafly/users.json')
 const { lang } = require('../../logs-data/lang/langage')
 const { Notification } = require('electron')
 const { update } = require('../../function/update')
+const { online } = require('../../logs-data/online/online')
+
+
 
 /**
  *  News Version
  */
 update()
+//console.log(users['vid'])
 
 /**
  * Navbar
@@ -33,3 +37,4 @@ $('#platforme').on('click', () => {
     const { atc } = require('../../function/atc')
     atc(icao)
 })
+

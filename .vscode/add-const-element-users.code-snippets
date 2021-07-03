@@ -1,0 +1,13 @@
+{
+	"add logiciel electron": {
+		"prefix": "!add-elec",
+		"body": [
+		  "const {shell, ipcRenderer} = require('electron');",
+		  "const $ = require('jquery')",
+		  "const os = require('os');",
+		  "const {preferencie} = require(os.homedir()+\"/AppData/Local/ivafly/users.json\")",
+		  "const {users} = require(os.homedir()+\"/AppData/Local/ivafly/users.json\")"
+		],
+		"description": "add logiciel electron"
+	  }
+}
