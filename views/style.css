@@ -1,9 +1,8 @@
-
-  .material-icons {
+.material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
-    font-size: 24px;  /* Preferred icon size */
+    font-size: 24px; /* Preferred icon size */
     display: inline-block;
     line-height: 1;
     text-transform: none;
@@ -11,45 +10,53 @@
     word-wrap: normal;
     white-space: nowrap;
     direction: ltr;
-    
-  
+
     /* Support for all WebKit browsers. */
     -webkit-font-smoothing: antialiased;
     /* Support for Safari and Chrome. */
     text-rendering: optimizeLegibility;
-  
+
     /* Support for Firefox. */
     -moz-osx-font-smoothing: grayscale;
-  
+
     /* Support for IE. */
     font-feature-settings: 'liga';
-  }
+}
 
-.material-icons , a{
+.material-icons,
+a {
     text-decoration: none;
     color: white;
 }
-#version{
+#version {
     display: none;
 }
 
-#result{
+#result {
     display: none;
 }
 
-#app{
+#app {
     display: none;
 }
 
-#twr{
+#twr {
     display: none;
 }
 
-#gnd{
+#gnd {
     display: none;
 }
 
-#del{
+#del {
     display: none;
 }
 
+#online {
+    color: rgb(34, 185, 34);
+}
+
+#online,
+.active {
+    color: rgb(34, 185, 34);
+}

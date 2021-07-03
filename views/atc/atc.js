@@ -7,9 +7,9 @@ const { lang } = require('../../logs-data/lang/langage')
 const { Notification } = require('electron')
 const { update } = require('../../function/update')
 const { online } = require('../../logs-data/online/online')
-const { searchflyplateforme } = require('../../function/pilote')
-const pilote2 = require('../../function/pilote2')
 const { data: ivaoData } = require('../../ivao/api-ivao.json')
+const { arrival, departure } = require('../../function/pilote2')
+const console = require('console')
 
 /**
  *  News Version
@@ -25,6 +25,7 @@ $('#navbar').load('../assets/navbar.html')
 online(users.vid)
 
 $('#result').hide()
+$('#fly').hide()
 
 $('#welcome').html(lang(preferencie.lang).sentences['welcome-message'])
 
@@ -34,12 +35,12 @@ if (users['account'] == true) {
     $('#username').hide()
 }
 
-$('#atchtml').on('click', () => {
-    ipcRenderer.send('atchtml')
-})
+//TODO: format search data
 
-$('#friendbutton').on('click', () => {
-    ipcRenderer.send('friendbutton')
-})
-
-
+$('#platforme').on('click', () => {
+    const icao = document.getElementById('icao').value
+    const { atc } = require('../../function/atc')
+    atc(icao).then(() => {
+    arrival(ivaoData.dataplatedorme + icao)
+    departure(ivaoData.dataplatedorme + icao)
+})})
