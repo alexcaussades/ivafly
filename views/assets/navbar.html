@@ -1,26 +1,26 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">IVA-Fly</a>
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" id="home" href="./home.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="features" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="welcome" href='#'>Account</a>
-            </li>
-            </ul>
-        </li>
-      </div>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">IVA-Fly</a>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" id="home" href="./home.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="features" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="welcome" href='#'>Account</a>
+      </li>
+    </ul>
+    </li>
+  </div>
 </nav>
 
 <script>
   require('electron');
-   $('#welcome').html(lang(preferencie.lang).sentences['account'])
-   $("#welcome").on('click', () =>{
+  $('#welcome').html(lang(preferencie.lang).sentences['account'])
+  $("#welcome").on('click', () => {
     ipcRenderer.send("welcome")
-})
-   require("bootstrap")
+  })
+  require("bootstrap")
 </script>
