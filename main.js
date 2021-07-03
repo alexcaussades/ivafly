@@ -80,7 +80,7 @@ app.whenReady().then(() =>{
 ipcMain.on("welcome",(EventTarget, arg) =>{
     const users = local+ "/users.json"
     
-    if (users["account"] == null){
+    if (users["account"] === null){
         Mainwindows = createWindow("./views/account/creataccount.html", 600, 480, null, 'Add account')
     }else{
         Mainwindows = createWindow("./views/account/account.html", 600, 480, null, 'my account') 
