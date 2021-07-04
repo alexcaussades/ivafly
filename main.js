@@ -25,7 +25,9 @@ if (!fs.existsSync(local)) {
 
 fs.open(local + '/users.json', function (err) {
     if (err) {
-        fs.writeFile(local + '/users.json', newUsersProfil, function (err) {})
+        fs.writeFile(local + '/users.json', newUsersProfil, function (err) {
+            
+        })
     }
 })
 

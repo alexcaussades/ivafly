@@ -1,15 +1,15 @@
-const { data } = require('../../ivao/api-ivao.json')
+const datas = require('../../ivao/api-ivao.json')
 const axios = require('axios')
 
 function friend(vid) {
-    const vid = vid
-    const serachVid = data.datavid
+    const serachVid = datas.datavid
 
     axios
         .get(serachVid + vid)
         .then(function (response) {
             // handle success
-            console.log(response)
+            const { datass } = response
+            return response["status"]
         })
         .catch(function (error) {
             // handle error

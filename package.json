@@ -1,18 +1,20 @@
 {
     "name": "ivao-files-systeme",
     "productName": "ivao-files-systeme",
-    "version": "1.0.0",
+    "version": "1.1.7",
     "description": "My Electron application description",
     "main": "main.js",
     "scripts": {
-        "start": "electron-forge start",
+        "start": "electron .",
         "package": "electron-forge package",
         "make": "electron-forge make",
+        "dist": "electron-builder",
+        "pack": "electron-builder --dir",
         "publish": "electron-forge publish",
         "lint": "eslint src --color"
     },
     "keywords": [],
-    "author": "alexa",
+    "author": "Alexandre Caussades <alexcaussades@gmail.com>",
     "license": "MIT",
     "config": {
         "forge": {
@@ -37,8 +39,9 @@
             "electronInstallerDebian": {},
             "electronInstallerRedhat": {},
             "github_repository": {
-                "owner": "",
-                "name": ""
+                "owner": "https://github.com/alexcaussades/ivafly",
+                "name": "alexcaussades",
+                "issues": "https://github.com/alexcaussades/ivafly/issues"
             },
             "windowsStoreConfig": {
                 "packageName": "",
@@ -47,27 +50,30 @@
         }
     },
     "dependencies": {
-        "electron-compile": "^6.4.4",
-        "electron-squirrel-startup": "^1.0.0",
-        "path": "^0.12.7",
         "@popperjs/core": "^2.9.2",
         "axios": "^0.21.1",
         "bootstrap": "^5.0.1",
+        "electron-compile": "^3.3.6",
+        "electron-squirrel-startup": "^1.0.0",
         "electron-store": "^8.0.0",
-        "file-system": "^2.2.2",
+        "file-system": "^1.2.2",
         "jquery": "^3.6.0",
-        "node-fetch": "^2.6.1"
+        "node-fetch": "^2.6.1",
+        "path": "^0.12.7"
     },
     "devDependencies": {
         "babel-plugin-transform-async-to-generator": "^6.24.1",
         "babel-preset-env": "^1.7.0",
         "babel-preset-react": "^6.24.1",
+        "electron": "^13.1.5",
+        "electron-builder": "^22.11.7",
         "electron-forge": "^5.2.4",
-        "electron-prebuilt-compile": "8.2.0",
+        "electron-prebuilt-compile": "^1.3.2",
         "eslint": "^3.19.0",
         "eslint-config-airbnb": "^15.1.0",
         "eslint-plugin-import": "^2.23.4",
         "eslint-plugin-jsx-a11y": "^5.1.1",
-        "eslint-plugin-react": "^7.24.0"
+        "eslint-plugin-react": "^7.24.0",
+        "yarn": "^1.22.10"
     }
 }

@@ -8,8 +8,6 @@ const { Notification } = require('electron')
 const { update } = require('../../function/update')
 const { online } = require('../../logs-data/online/online')
 
-
-
 /**
  *  News Version
  */
@@ -38,3 +36,4 @@ $('#platforme').on('click', () => {
     atc(icao)
 })
 
+online(users.vid)
