@@ -9,9 +9,11 @@ function online(value) {
         .then(function (response) {
             // handle success
             let { data } = response.data
-            if (data.atc['Callsign'] != null || data.pilot['Callsign'] != null) {
+            if (data.atc['Callsign'] != null || data.pilot['callsign'] != null) {
                 $('#online').show()
-                $('#online').html('<img class="active" src="../../images/outline_online_prediction_white_24dp.png"> Online')
+                $('#online').html(
+                    '<img class="active" src="../../images/outline_online_prediction_white_24dp.png"> Online'
+                )
             }
         })
         .catch(function (error) {

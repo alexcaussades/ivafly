@@ -38,7 +38,4 @@ $('#platforme').on('click', () => {
     atc(icao)
 })
 
-$('#atchtml').on('click', () => {
-    ipcRenderer.send('atchtml')
-  })
 

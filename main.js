@@ -3,8 +3,12 @@ const path = require('path')
 const os = require('os')
 const local = os.homedir() + '/AppData/Local/ivafly'
 const fs = require('fs')
-const friend = require("./logs-data/friend/addfriends")
+const friend = require('./logs-data/friend/addfriends')
 
+
+/**
+ * Creation de données utile
+ */
 let profil = {
     users: {
         account: null,
@@ -30,10 +34,10 @@ fs.open(local + '/users.json', function (err) {
     }
 })
 
-friend.addfriends()
+friend.creatdatabase()
 
 /**
- * ceci est un test de git via pcp
+ * Logiciel 
  */
 
 let win = null
@@ -93,6 +97,11 @@ ipcMain.on('welcome', (EventTarget, arg) => {
 })
 
 ipcMain.on('discord', (EventTarget, arg) => {
-    const {discord} = require('./function/discord')
+    const { discord } = require('./function/discord')
+    discord()
+})
+
+ipcMain.on('atchtml', (EventTarget, arg) => {
+    const { discord } = require('./function/discord')
     discord()
 })
