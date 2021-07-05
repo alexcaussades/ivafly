@@ -59,7 +59,8 @@
         "file-system": "^1.2.2",
         "jquery": "^3.6.0",
         "node-fetch": "^2.6.1",
-        "path": "^0.12.7"
+        "path": "^0.12.7",
+        "sqlite3": "^5.0.2"
     },
     "devDependencies": {
         "babel-plugin-transform-async-to-generator": "^6.24.1",

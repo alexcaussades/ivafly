@@ -11,7 +11,7 @@ function online(value) {
             let { data } = response.data
             if (data.atc['Callsign'] != null || data.pilot['Callsign'] != null) {
                 $('#online').show()
-                $('#online').html('<img src="../../images/outline_online_prediction_white_24dp.png"> Online')
+                $('#online').html('<img class="active" src="../../images/outline_online_prediction_white_24dp.png"> Online')
             }
         })
         .catch(function (error) {

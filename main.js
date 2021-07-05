@@ -3,6 +3,7 @@ const path = require('path')
 const os = require('os')
 const local = os.homedir() + '/AppData/Local/ivafly'
 const fs = require('fs')
+const friend = require("./logs-data/friend/addfriends")
 
 let profil = {
     users: {
@@ -28,6 +29,8 @@ fs.open(local + '/users.json', function (err) {
         fs.writeFile(local + '/users.json', newUsersProfil, function (err) {})
     }
 })
+
+friend.addfriends()
 
 /**
  * ceci est un test de git via pcp

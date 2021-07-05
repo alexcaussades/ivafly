@@ -51,3 +51,12 @@ a {
 #del {
     display: none;
 }
+
+#online {
+    color: rgb(34, 185, 34);
+}
+
+#online,
+.active {
+    color: rgb(34, 185, 34);
+}
