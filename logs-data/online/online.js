@@ -1,4 +1,4 @@
-const { data } = require('../../ivao/api-ivao.json')
+const datas = require('../../ivao/api-ivao.json')
 const axios = require('axios')
 
 function online(value) {
@@ -8,7 +8,11 @@ function online(value) {
         .get(urlvid)
         .then(function (response) {
             // handle success
-            console.log(response)
+            let { data } = response.data
+            if (data.atc['Callsign'] != null || data.pilot['Callsign'] != null) {
+                $('#online').show()
+                $('#online').html('<img src="../../images/outline_online_prediction_white_24dp.png"> Online')
+            }
         })
         .catch(function (error) {
             // handle error

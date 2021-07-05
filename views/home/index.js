@@ -12,13 +12,15 @@ const { online } = require('../../logs-data/online/online')
  *  News Version
  */
 update()
-//console.log(users['vid'])
+
 
 /**
  * Navbar
  */
 
 $('#navbar').load('../assets/navbar.html')
+
+online(users.vid)
 
 $('#result').hide()
 
@@ -36,4 +38,4 @@ $('#platforme').on('click', () => {
     atc(icao)
 })
 
-online(users.vid)
+

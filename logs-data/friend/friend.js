@@ -8,8 +8,8 @@ function friend(vid) {
         .get(serachVid + vid)
         .then(function (response) {
             // handle success
-            const { datass } = response
-            return response["status"]
+            const { data } = response
+            return response['status']
         })
         .catch(function (error) {
             // handle error

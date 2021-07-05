@@ -1,8 +1,9 @@
 {
     "data": {
-        "verifVersion": "1.1.6",
+        "verifVersion": "1.1.7",
         "author": "Alexandre Caussades (AlexCaussades)",
         "email": "alexcaussades@gmail.com",
-        "urlReleases": "https://github.com/alexcaussades/ivafly/releases"
+        "urlReleases": "https://github.com/alexcaussades/ivafly/releases",
+        "urldiscord": "https://discord.gg/vg7n67ECeV"
     }
 }

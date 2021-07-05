@@ -25,9 +25,7 @@ if (!fs.existsSync(local)) {
 
 fs.open(local + '/users.json', function (err) {
     if (err) {
-        fs.writeFile(local + '/users.json', newUsersProfil, function (err) {
-            
-        })
+        fs.writeFile(local + '/users.json', newUsersProfil, function (err) {})
     }
 })
 
@@ -89,4 +87,9 @@ ipcMain.on('welcome', (EventTarget, arg) => {
     } else {
         Mainwindows = createWindow('./views/account/account.html', 600, 480, null, 'my account')
     }
+})
+
+ipcMain.on('discord', (EventTarget, arg) => {
+    const {discord} = require('./function/discord')
+    discord()
 })
