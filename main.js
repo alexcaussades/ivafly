@@ -5,7 +5,6 @@ const local = os.homedir() + '/AppData/Local/ivafly'
 const fs = require('fs')
 const friend = require('./logs-data/friend/addfriends')
 
-
 /**
  * Creation de données utile
  */
@@ -37,7 +36,7 @@ fs.open(local + '/users.json', function (err) {
 friend.creatdatabase()
 
 /**
- * Logiciel 
+ * Logiciel
  */
 
 let win = null
@@ -104,4 +103,8 @@ ipcMain.on('discord', (EventTarget, arg) => {
 ipcMain.on('atchtml', (EventTarget, arg) => {
     const { discord } = require('./function/discord')
     discord()
+})
+
+ipcMain.on('friendbutton', (EventTarget, arg) => {
+    Mainwindows = createWindow('./views/friend/friend.html',  'Add friend')
 })

@@ -1,3 +1,7 @@
+/**
+ * choise the langague
+ * */
+
 function lang(value = 'fr') {
     if (value === 'fr') {
         const fr = require('./app-dic-fr.json')

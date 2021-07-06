@@ -6,6 +6,7 @@
         "dataairport": "https://alexcaussades.com/api-ivao/airport.php?icao=",
         "datavid": "https://alexcaussades.com/api-ivao/vid.php?vid=",
         "datavidfav": "https://alexcaussades.com/api-ivao/vidfav.php?vid=",
+        "dataplatedorme": "https://alexcaussades.com/api-ivao/plateforme.php?icao=",
         "addAccount": "https://alexcaussades.com/api-ivao/account.php"
     }
 }

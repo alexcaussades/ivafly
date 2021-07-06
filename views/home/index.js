@@ -7,12 +7,12 @@ const { lang } = require('../../logs-data/lang/langage')
 const { Notification } = require('electron')
 const { update } = require('../../function/update')
 const { online } = require('../../logs-data/online/online')
+const { searchflyplateforme } = require('../../function/pilote')
 
 /**
  *  News Version
  */
 update()
-
 
 /**
  * Navbar
@@ -32,13 +32,12 @@ if (users['account'] == true) {
     $('#username').hide()
 }
 
-$('#platforme').on('click', () => {
-    icao = document.getElementById('icao').value
-    const { atc } = require('../../function/atc')
-    atc(icao)
-})
-
 $('#atchtml').on('click', () => {
     ipcRenderer.send('atchtml')
-  })
+})
 
+$('#friendbutton').on('click', () => {
+    ipcRenderer.send('friendbutton')
+})
+
+searchflyplateforme('LFPG')
