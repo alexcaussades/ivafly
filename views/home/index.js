@@ -8,6 +8,8 @@ const { Notification } = require('electron')
 const { update } = require('../../function/update')
 const { online } = require('../../logs-data/online/online')
 const { searchflyplateforme } = require('../../function/pilote')
+const pilote2 = require('../../function/pilote2')
+const { data: ivaoData } = require('../../ivao/api-ivao.json')
 
 /**
  *  News Version
@@ -40,4 +42,4 @@ $('#friendbutton').on('click', () => {
     ipcRenderer.send('friendbutton')
 })
 
-searchflyplateforme('LFPG')
+

@@ -7,12 +7,14 @@ const { lang } = require('../../logs-data/lang/langage')
 const { Notification } = require('electron')
 const { update } = require('../../function/update')
 const { online } = require('../../logs-data/online/online')
+const { data: ivaoData } = require('../../ivao/api-ivao.json')
+const { arrival, departure } = require('../../function/pilote2')
+const console = require('console')
 
 /**
  *  News Version
  */
 update()
-
 
 /**
  * Navbar
@@ -23,6 +25,7 @@ $('#navbar').load('../assets/navbar.html')
 online(users.vid)
 
 $('#result').hide()
+$('#fly').hide()
 
 $('#welcome').html(lang(preferencie.lang).sentences['welcome-message'])
 
@@ -32,10 +35,12 @@ if (users['account'] == true) {
     $('#username').hide()
 }
 
+//TODO: format search data
+
 $('#platforme').on('click', () => {
-    icao = document.getElementById('icao').value
+    const icao = document.getElementById('icao').value
     const { atc } = require('../../function/atc')
-    atc(icao)
-})
-
-
+    atc(icao).then(() => {
+    arrival(ivaoData.dataplatedorme + icao)
+    departure(ivaoData.dataplatedorme + icao)
+})})
