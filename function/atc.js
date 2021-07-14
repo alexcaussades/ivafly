@@ -9,7 +9,6 @@ function openurl(value) {
 
 function atc(icao) {
     const platform = ivaoData.dataairport
-    $('#result').show()
 
     axios
         .get(platform + icao)
@@ -28,7 +27,7 @@ function atc(icao) {
             $('#chartvac').on('click', () => {
                 openurl(vacchart)
             })
-
+            $('#result').show()
             axios.get(ivaoData.dataatc + icao).then(function (response2) {
                 const { data } = response2
                 if (data['data']['app']['Callsign'] != null) {
