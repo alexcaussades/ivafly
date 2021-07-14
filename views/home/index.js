@@ -7,9 +7,6 @@ const { lang } = require('../../logs-data/lang/langage')
 const { Notification } = require('electron')
 const { update } = require('../../function/update')
 const { online } = require('../../logs-data/online/online')
-const { searchflyplateforme } = require('../../function/pilote')
-const pilote2 = require('../../function/pilote2')
-const { data: ivaoData } = require('../../ivao/api-ivao.json')
 
 /**
  *  News Version
@@ -21,6 +18,10 @@ update()
  */
 
 $('#navbar').load('../assets/navbar.html')
+
+/**
+ * recherche de l'utilisateur en ligne
+ **/
 
 online(users.vid)
 
@@ -41,5 +42,3 @@ $('#atchtml').on('click', () => {
 $('#friendbutton').on('click', () => {
     ipcRenderer.send('friendbutton')
 })
-
-
