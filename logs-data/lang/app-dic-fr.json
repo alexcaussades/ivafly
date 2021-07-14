@@ -78,7 +78,9 @@
         "Langage": "Choix de la langue",
         "account": "mon Compte",
         "Sign-in": "Connectez-vous",
-        "Sign-up": "S'inscrire"
+        "Sign-up": "S'inscrire",
+        "usersExist": "Le vid existe déjà dans votre liste d'amis !",
+        "usersAdd": "Le vid à était ajouter à votre liste"
     },
     "words": {
         "settings": "options",

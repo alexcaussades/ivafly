@@ -78,7 +78,9 @@
         "Langage": "Choice of language",
         "account": "Account",
         "Sign-in": "Sign in",
-        "Sign-up": "Sign up"
+        "Sign-up": "Sign up",
+        "usersExist": "The vid already exists in your friends list!",
+        "usersAdd": "The vid to was add to your list"
     },
     "words": {
         "settings": "settings",

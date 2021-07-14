@@ -24,42 +24,30 @@
 
     <!-- Page Content -->
     <div id="navbar"></div>
-
+    <br>
     <div class="container">
-
-
-        <div>
-            <h3><span id="welcome"></span> <span id="username"></span></h3>
-        </div>
-
-
-        <br>
         <div class="alert alert-warning" role="alert" id="version">
             <p id="new-download"></p>
         </div>
         <br>
-
-        <div class="container px-4">
-            <div class="row gx-5">
-                <div class="col">
-
-                    <h5></h5>
-                    <a href="../atc/atc.html"><button type="button" class="btn btn-info btn-sm">ATC</button></a>
-                    <button type="button" disabled class="btn btn-success btn-sm" data-bs-toggle="tooltip"
-                        data-bs-placement="top" title="Tooltip on top">Pilot</button>
-                    <button type="button" class="btn btn-dark btn-sm" id="friendbutton">Friend</button>
+        <form action="#" method="dialog">
+            <div class="col-auto">
+                <div class="form-floating mb-3">
+                    <input type="text" name="vid" class="form-control" id="vid">
+                    <label for="floatingInput" id="vid">Vid</label>
                 </div>
-
+                <div class="form-floating mb-3">
+                    <input type="text" name="name" id="name" class="form-control">
+                    <label for="floatingInput" id="vid">Name</label>
+                </div>
+                <input type="submit" id="friend" class="btn btn-primary mt-2"></button>
             </div>
+        </form>
+        <p id="usersExist"></p>
+        <p id="usersAdd"></p>
+    </div>
 
 
 
-            
 
-                <!-- Bootstrap core JavaScript -->
-                <script src="index.js"></script>
-
-
-</body>
-
-</html>
+    <script src="friend.js"></script>

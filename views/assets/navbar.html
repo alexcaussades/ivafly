@@ -3,10 +3,16 @@
     <a class="navbar-brand" href="#">IVA-Fly</a>
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" id="home" href="./home.html">Home</a>
+        <a class="nav-link active" aria-current="page" id="home" href="../home/home.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="online" href="#"></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" id="features" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="discord" href="#">Discord</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" id="welcome" href='#'>Account</a>
@@ -22,6 +28,9 @@
   $("#welcome").on('click', () => {
     ipcRenderer.send("welcome")
   })
-  $('#online').show('<span class="material-icons-outlined"> online')
+  $('#discord').on('click', () => {
+    ipcRenderer.send('discord')
+  })
+  $('#online').hide()
   require("bootstrap")
 </script>
