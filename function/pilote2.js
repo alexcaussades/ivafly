@@ -3,10 +3,11 @@
  */
 const axios = require('axios')
 
-function arrival(url, icao) {
-    axios.get(url + icao).then(function (response) {
+function arrival(icao) {
+    axios.get('https://alexcaussades.com/api-ivao/plateforme.php?icao=' + icao).then(function (response) {
         const { data } = response
-        if (data.data['arr'].total > 0) {
+        console.log('Arrival: ' + response)
+        if (data.data['arr'].total != '0') {
             $('#totalarrival').html(data.data['arr'].total)
             for (let i = 0; i < data.data['arr'].total; i++) {
                 $('#arrival').append(
@@ -15,14 +16,17 @@ function arrival(url, icao) {
                         '</li>'
                 )
             }
+        } else {
+            return $('#totalarrival').html(0)
         }
     })
 }
 
-function departure(url, icao) {
-    axios.get(url + icao).then(function (response) {
+function departure(icao) {
+    axios.get('https://alexcaussades.com/api-ivao/plateforme.php?icao=' + icao).then(function (response) {
         const { data } = response
-        if (data.data['dep'].total > 0) {
+        console.log('departure: ' + data.data['dep'].total)
+        if (data.data['dep'].total != '0') {
             $('#totaldeparture').html(data.data['dep'].total)
             for (let i = 0; i < data.data['dep'].total; i++) {
                 $('#departure').append(
@@ -31,6 +35,8 @@ function departure(url, icao) {
                         '</li>'
                 )
             }
+        } else {
+            return $('#totaldeparture').html(0)
         }
     })
 }

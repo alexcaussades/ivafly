@@ -9,7 +9,7 @@ const { update } = require('../../function/update')
 const { online } = require('../../logs-data/online/online')
 const { data: ivaoData } = require('../../ivao/api-ivao.json')
 const { arrival, departure } = require('../../function/pilote2')
-const console = require('console')
+const internal = require('stream')
 
 /**
  *  News Version
@@ -40,7 +40,21 @@ if (users['account'] == true) {
 $('#platforme').on('click', () => {
     const icao = document.getElementById('icao').value
     const { atc } = require('../../function/atc')
-    atc(icao).then(() => {
-    arrival(ivaoData.dataplatedorme + icao)
-    departure(ivaoData.dataplatedorme + icao)
-})})
+    if (icao.length === 4) {
+        $('#result').show()
+        atc(icao)
+
+        if (preferencie.autoload == true) {
+            setInterval(() => {
+                const atcform = document.getElementById('atcform')
+                atcform.reset()
+                $('#result').html('')
+                $('#departure').html('')
+                $('#arrival').html('')
+                $('#totalarrival').html('')
+                $('#totaldeparture').html('')
+                atc(icao)
+            }, 60000)
+        }
+    }
+})

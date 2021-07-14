@@ -1,6 +1,7 @@
 const axios = require('axios')
 const { data: ivaoData } = require('../ivao/api-ivao.json')
 const { vac } = require('../ivao/vac/vac')
+const { arrival, departure } = require('./pilote2')
 
 function openurl(value) {
     return shell.openExternal(value)
@@ -57,6 +58,10 @@ function atc(icao) {
                         data['data']['del']['Callsign'] + ' ' + data['data']['del']['Frequency'] + ' MHz'
                     )
                     $('#delAtis').html('Atis: ' + data['data']['del']['Atis'])
+                }
+                if (data['totalfly'] != 0) {
+                    $('#fly').show()
+                    return arrival(icao), departure(icao)
                 }
             })
         })
