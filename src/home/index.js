@@ -23,7 +23,7 @@ $('#navbar').load('../assets/navbar.html')
  * recherche de l'utilisateur en ligne
  **/
 
-online(users.vid)
+//online(users.vid)
 
 $('#result').hide()
 

@@ -46,7 +46,7 @@ function createWindow(
     loadFileTemplate,
     withDefault = 1200,
     heightDefault = 800,
-    iconDefault = path.join('images/IVAO_Logo.png'),
+    iconDefault = path.join('./images/IVAO_Logo.png'),
     titleDefault = 'IvaFly'
 ) {
     win = new BrowserWindow({
@@ -55,7 +55,7 @@ function createWindow(
         icon: iconDefault,
         title: titleDefault,
         webPreferences: {
-            nodeIntegration: false,
+            nodeIntegration: true,
             contextIsolation: false, //lancement dans les autres fenetre
             plugins: true,
         },

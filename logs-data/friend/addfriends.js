@@ -1,8 +1,8 @@
-//const sqlite3 = require('sqlite3').verbose()
+const sqlite3 = require('sqlite3').verbose()
 const os = require('os')
 const { lang } = require('../lang/langage')
 const friend = os.homedir() + '/AppData/Local/ivafly/friend/'
-//const pdo = new sqlite3.Database(friend + 'friend.db')
+const pdo = new sqlite3.Database(friend + 'friend.db')
 const { preferencie } = require(os.homedir() + '/AppData/Local/ivafly/users.json')
 const { users } = require(os.homedir() + '/AppData/Local/ivafly/users.json')
 
