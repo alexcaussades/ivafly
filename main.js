@@ -46,7 +46,7 @@ function createWindow(
     loadFileTemplate,
     withDefault = 1200,
     heightDefault = 800,
-    iconDefault = path.join('images/IVAO_Logo.png'),
+    iconDefault = path.join('./images/IVAO_Logo.png'),
     titleDefault = 'IvaFly'
 ) {
     win = new BrowserWindow({
@@ -82,16 +82,16 @@ app.on('window-all-closed', function () {
 
 app.whenReady().then(() => {
     app.allowRendererProcessReuse = true
-    Mainwindows = createWindow('./views/home/home.html')
+    Mainwindows = createWindow('./src/home/home.html')
 })
 
 ipcMain.on('welcome', (EventTarget, arg) => {
     const users = local + '/users.json'
 
     if (users['account'] === null) {
-        Mainwindows = createWindow('./views/account/creataccount.html', 600, 480, null, 'Add account')
+        Mainwindows = createWindow('./src/account/creataccount.html', 600, 480, null, 'Add account')
     } else {
-        Mainwindows = createWindow('./views/account/account.html', 600, 480, null, 'my account')
+        Mainwindows = createWindow('./src/account/account.html', 600, 480, null, 'my account')
     }
 })
 
@@ -106,5 +106,5 @@ ipcMain.on('atchtml', (EventTarget, arg) => {
 })
 
 ipcMain.on('friendbutton', (EventTarget, arg) => {
-    Mainwindows = createWindow('./views/friend/friend.html',  'Add friend')
+    Mainwindows = createWindow('./src/friend/friend.html',  'Add friend')
 })

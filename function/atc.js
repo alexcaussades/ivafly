@@ -1,6 +1,7 @@
 const axios = require('axios')
 const { data: ivaoData } = require('../ivao/api-ivao.json')
 const { vac } = require('../ivao/vac/vac')
+const { arrival, departure } = require('./pilote2')
 
 function openurl(value) {
     return shell.openExternal(value)
@@ -8,7 +9,6 @@ function openurl(value) {
 
 function atc(icao) {
     const platform = ivaoData.dataairport
-    $('#result').show()
 
     axios
         .get(platform + icao)
@@ -27,7 +27,7 @@ function atc(icao) {
             $('#chartvac').on('click', () => {
                 openurl(vacchart)
             })
-
+            $('#result').show()
             axios.get(ivaoData.dataatc + icao).then(function (response2) {
                 const { data } = response2
                 if (data['data']['app']['Callsign'] != null) {
@@ -57,6 +57,10 @@ function atc(icao) {
                         data['data']['del']['Callsign'] + ' ' + data['data']['del']['Frequency'] + ' MHz'
                     )
                     $('#delAtis').html('Atis: ' + data['data']['del']['Atis'])
+                }
+                if (data['totalfly'] != 0) {
+                    $('#fly').show()
+                    return arrival(icao), departure(icao)
                 }
             })
         })

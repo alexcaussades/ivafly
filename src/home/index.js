@@ -22,7 +22,15 @@ update()
 
 $('#navbar').load('../assets/navbar.html')
 
+<<<<<<< HEAD:views/home/index.js
 online(users.vid)
+=======
+/**
+ * recherche de l'utilisateur en ligne
+ **/
+
+//online(users.vid)
+>>>>>>> devs:src/home/index.js
 
 $('#result').hide()
 
@@ -34,6 +42,11 @@ if (users['account'] == true) {
     $('#username').hide()
 }
 
+<<<<<<< HEAD:views/home/index.js
+=======
+//TODO: add a function to check if the user is connected to the internet
+
+>>>>>>> devs:src/home/index.js
 $('#atchtml').on('click', () => {
     ipcRenderer.send('atchtml')
 })
@@ -41,5 +54,8 @@ $('#atchtml').on('click', () => {
 $('#friendbutton').on('click', () => {
     ipcRenderer.send('friendbutton')
 })
+<<<<<<< HEAD:views/home/index.js
 
 
+=======
+>>>>>>> devs:src/home/index.js

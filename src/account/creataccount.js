@@ -52,6 +52,7 @@ $('#newaccountsubmit').on('click', () => {
                 preferencie: {
                     lang: langageinput,
                     interface: 'white',
+                    autoload: true,
                 },
             }
             let newUsersProfil = JSON.stringify(profil)

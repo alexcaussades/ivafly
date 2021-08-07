@@ -69,7 +69,11 @@ function splitConfirmelateforme(value) {
 function splitQNH(value) {
     let QNH = atis.split('Q')
     let QNHsplit = QNH[1].split(' ')
+<<<<<<< HEAD
     console.log('QNH: ' + QNHsplit[0])
+=======
+    $('#QNH').html('QNH: ' + CONFIRMSPlit[0])
+>>>>>>> devs
 }
 
 module.exports = {

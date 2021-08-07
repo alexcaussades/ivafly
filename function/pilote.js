@@ -1,6 +1,18 @@
 const axios = require('axios')
 const { data: ivaoData } = require('../ivao/api-ivao.json')
 
+<<<<<<< HEAD
+=======
+
+
+/**
+ * @deprecated the function is not used anymore
+ * @author alexandre Caussades <me@alexcaussades.com>
+ * @copyright 2021 
+*/
+
+
+>>>>>>> devs
 function searchflyplateforme(icao) {
     axios.get(ivaoData.dataplatedorme + icao).then(function (response) {
         const { data } = response
