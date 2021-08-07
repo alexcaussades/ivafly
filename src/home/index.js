@@ -35,6 +35,8 @@ if (users['account'] == true) {
     $('#username').hide()
 }
 
+//TODO: add a function to check if the user is connected to the internet
+
 $('#atchtml').on('click', () => {
     ipcRenderer.send('atchtml')
 })

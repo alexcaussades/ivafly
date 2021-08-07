@@ -1,9 +1,9 @@
-const sqlite3 = require('sqlite3').verbose()
+//const sqlite3 = require('sqlite3').verbose()
 const os = require('os')
 const { lang } = require('../lang/langage')
 const { online, onlineFriendsUsers } = require('../online/online')
 const friend = os.homedir() + '/AppData/Local/ivafly/friend/'
-const pdo = new sqlite3.Database(friend + 'friend.db')
+//const pdo = new sqlite3.Database(friend + 'friend.db')
 const axios = require('axios')
 
 function searchfriend() {

@@ -33,20 +33,32 @@ if (users['account'] == true) {
 }
 
 $('#platforme').on('click', () => {
-    const icao = document.getElementById('icao').value
+    let responseForm = $('#icao').val()
+    const icao = responseForm
+    console.log(icao)
     const { atc } = require('../../function/atc')
     if (icao.length === 4) {
+        $('#departure').html('')
+        $('#arrival').html('')
+        $('#totalarrival').html('')
+        $('#totaldeparture').html('')
+        $('#app').hide()
+        $('#twr').hide()
+        $('#gnd').hide()
+        $('#del').hide()
         $('#result').show()
         atc(icao)
 
         if (preferencie.autoload == true) {
             setInterval(() => {
-                const atcform = document.getElementById('atcform')
-                atcform.reset()
                 $('#departure').html('')
                 $('#arrival').html('')
                 $('#totalarrival').html('')
                 $('#totaldeparture').html('')
+                $('#app').hide()
+                $('#twr').hide()
+                $('#gnd').hide()
+                $('#del').hide()
                 atc(icao)
             }, 60000)
         }
