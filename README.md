@@ -47,3 +47,4 @@ Disponible en :
 ## Communauté  
 
 [Vous pouvez nous rejoindre sur le canal discussion](https://github.com/alexcaussades/ivafly/discussions)
+[Nous rejoindre sur Discord](https://discord.gg/vg7n67ECeV)

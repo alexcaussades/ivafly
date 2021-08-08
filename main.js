@@ -27,6 +27,10 @@ if (!fs.existsSync(local)) {
     fs.mkdirSync(local + '/data-pilot')
 }
 
+if(!fs.existsSync(local + '/users.json')){
+    fs.writeFileSync(local + '/users.json', newUsersProfil)
+}
+
 fs.open(local + '/users.json', function (err) {
     if (err) {
         fs.writeFile(local + '/users.json', newUsersProfil, function (err) {})
@@ -88,7 +92,7 @@ app.whenReady().then(() => {
 ipcMain.on('welcome', (EventTarget, arg) => {
     const users = local + '/users.json'
 
-    if (users['account'] === null) {
+    if (users['account'] == null) {
         Mainwindows = createWindow('./src/account/creataccount.html', 600, 480, null, 'Add account')
     } else {
         Mainwindows = createWindow('./src/account/account.html', 600, 480, null, 'my account')
