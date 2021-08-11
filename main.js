@@ -3,7 +3,7 @@ const path = require('path')
 const os = require('os')
 const local = os.homedir() + '/AppData/Local/ivafly'
 const fs = require('fs')
-const friend = require('./logs-data/friend/addfriends')
+//const friend = require('./logs-data/friend/addfriends')
 
 /**
  * Creation de données utile
@@ -17,23 +17,27 @@ let profil = {
         interface: 'white',
     },
 }
-let newUsersProfil = JSON.stringify(profil, null, 2)
+const newUsersProfil = JSON.stringify(profil, null, 2)
 
-if (!fs.existsSync(local)) {
-    fs.mkdirSync(local)
-    fs.mkdirSync(local + '/friend')
-    fs.mkdirSync(local + '/sav')
-    fs.mkdirSync(local + '/data-atc')
-    fs.mkdirSync(local + '/data-pilot')
-}
+fs.mkdirSync(local, { recursive: true })
+// fs.mkdirSync(local + '/friend')
+// fs.mkdirSync(local + '/sav')
+// fs.mkdirSync(local + '/data-atc')
+// fs.mkdirSync(local + '/data-pilot')
 
 fs.open(local + '/users.json', function (err) {
     if (err) {
-        fs.writeFile(local + '/users.json', newUsersProfil, function (err) {})
+        fs.writeFile(local + '/users.json', newUsersProfil, "utf8", function (err, data) {
+            if (err) {
+                console.log(err)
+                } else {
+                    console.log(profil)
+                }
+            })
     }
 })
 
-friend.creatdatabase()
+//friend.creatdatabase()
 
 /**
  * Logiciel
@@ -88,7 +92,7 @@ app.whenReady().then(() => {
 ipcMain.on('welcome', (EventTarget, arg) => {
     const users = local + '/users.json'
 
-    if (users['account'] === null) {
+    if (users['account'] == null) {
         Mainwindows = createWindow('./src/account/creataccount.html', 600, 480, null, 'Add account')
     } else {
         Mainwindows = createWindow('./src/account/account.html', 600, 480, null, 'my account')
@@ -106,5 +110,5 @@ ipcMain.on('atchtml', (EventTarget, arg) => {
 })
 
 ipcMain.on('friendbutton', (EventTarget, arg) => {
-    Mainwindows = createWindow('./src/friend/friend.html',  'Add friend')
+    Mainwindows = createWindow('./src/friend/friend.html', 'Add friend')
 })
