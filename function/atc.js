@@ -2,6 +2,13 @@ const axios = require('axios')
 const { data: ivaoData } = require('../ivao/api-ivao.json')
 const { vac } = require('../ivao/vac/vac')
 const { arrival, departure } = require('./pilote2')
+const {
+    splitRwyPlateforme,
+    splitTRLPlateforme,
+    splitTAPlateforme,
+    splitConfirmelateforme,
+    splitQNH,
+} = require('./regex_atc')
 
 function openurl(value) {
     return shell.openExternal(value)
@@ -22,20 +29,25 @@ function atc(icao) {
             $('#resultsdeparture').html(data['resultsdeparture'])
             $('#resultsarrival').html(data['resultsarrival'])
             $('#totalAtc').html(data['totalATC'])
-            $('#totalfly').html(data['totalfly'])
+            //$('#totalfly').html(data['totalfly'])
             $('#chart').html("<a href='' id='chartvac'><span class='material-icons'>area_chart</span></a>")
             $('#chartvac').on('click', () => {
                 openurl(vacchart)
             })
+            $('#result').hide()
             $('#result').show()
             axios.get(ivaoData.dataatc + icao).then(function (response2) {
                 const { data } = response2
+                $('#app').hide()
+                $('#twr').hide()
+                $('#gnd').hide()
+                $('#del').hide()
                 if (data['data']['app']['Callsign'] != null) {
                     $('#app').show()
                     $('#AppCallsign').html(
                         data['data']['app']['Callsign'] + ' ' + data['data']['app']['Frequency'] + ' MHz'
                     )
-                    $('#AppAtis').html('Atis: ' + data['data']['app']['Atis'])
+                    $('#AppAtis').html(data['data']['app']['Atis'])
                 }
                 if (data['data']['twr']['Callsign'] != null) {
                     $('#twr').show()
