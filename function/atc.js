@@ -27,9 +27,14 @@ function atc(icao) {
             $('#chartvac').on('click', () => {
                 openurl(vacchart)
             })
+            $('#result').hide()
             $('#result').show()
             axios.get(ivaoData.dataatc + icao).then(function (response2) {
                 const { data } = response2
+                $('#app').hide()
+                $('#twr').hide()
+                $('#gnd').hide()
+                $('#del').hide()
                 if (data['data']['app']['Callsign'] != null) {
                     $('#app').show()
                     $('#AppCallsign').html(
